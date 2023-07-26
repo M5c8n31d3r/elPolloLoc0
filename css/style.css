@@ -1,0 +1,385 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family: 'zabars', Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+body::after {
+    content: "";
+    background-image: url('../img/10_assets/desert.jpg');
+    background-size: cover;
+    background-position: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    font-family: 'zabars', Arial, Helvetica, sans-serif;
+}
+
+.mobilePhoneWarning {
+    display: none;
+}
+
+p {
+    font-size: 20px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    cursor: default;
+}
+
+span {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    font-size: 12px;
+    z-index: 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #7000bb;
+}
+
+h1 {
+    font-size: 72px;
+    font-weight: normal;
+    letter-spacing: 12px;
+    text-shadow: 20px 20px 5px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 30px;
+}
+
+.d-none {
+    display: none;
+}
+
+.vis-hidden {
+    opacity: 0;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.alignCenter {
+    align-items: center;
+}
+
+.spaceBetween {
+    justify-content: space-between;
+}
+
+.container {
+    width: 720px;
+    height: 480px;
+    box-shadow: 0px 0px 8px 0px #000000;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+canvas {
+    display: block;
+    border-radius: 8px;    
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    background-color: #FF8E00;
+    border-radius: 12px;
+    box-shadow: 2px 2px 2px 2px #AA401A;    
+    cursor: pointer;
+    z-index: 100;
+    transition: all .1s ease-in-out;
+    width: 70px;
+    height: 30px;
+    font-family: 'zabars';
+    font-size: 24px;
+    border: none;
+}
+
+button:hover {
+    background-color: #3DB3E4;
+    transform: scale(1.1);
+}
+
+#startContainer {
+    background-image: url('../img/9_intro_outro_screens/start/startscreen_1.png');
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+#startContainer img {
+    width: 100%;
+    height: 100%;
+}
+
+#startButton {
+    height: 48px;
+    width: 192px;
+    margin-top: 42px;
+    font-size: 36px;
+    cursor: pointer;
+    background-color: #FF8E00;
+    border: none;
+    border-radius: 12px;
+}
+
+#startButton:hover {
+    background-color: #FFDD02;
+    transform: scale(1.1);
+}
+
+.startButtonLine {
+    position: absolute;
+    top: 12px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.menuButtonLine {
+    position: absolute;
+    bottom: 0px;
+    width: calc(100% - 64px);
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.menuButton {
+    height: 40px;
+    width: 75px;
+    font-size: 20px;
+    margin: 8px;
+}
+
+.fullscreen {
+    border-radius: unset;
+}
+
+.canvasFullscreen {
+    height: 100%;
+    width: 100%;
+}
+
+/* .hud {
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    color: #2196F3;
+    
+}
+
+#hud button {
+    margin: 16px;
+    border-radius: 100px;
+    width: 56px;
+    height: 56px;
+    user-select: none;
+  
+} */
+
+/* #hud button:hover{
+    width: 55px;
+    height: 55px;
+} */
+
+.throw {
+    height: 44px;
+    width: 44px;
+    padding-bottom: 4px;
+    transform: rotate(30deg);
+
+}
+
+
+.gameMenuButtonLine {
+    position: absolute;
+    top: 0;
+    padding: unset;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#closeButton {
+    height: 30px;
+    width: 80px;
+    font-size: 24px;
+}
+
+.background {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .4s ease-in-out;
+}
+
+.menu {
+    display: block;
+    background-image: radial-gradient(#FF8E00, #f9e000, #FF8E00);
+    padding: 16px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px 2px #AA401A;
+    transition: all .4s ease-in-out;
+}
+
+.menu p {
+    font-size: 28px;
+}
+
+#settings {
+    height: auto;
+    width: 250px;
+}
+
+#control {
+    height: auto;
+    width: 250px;
+}
+
+.controlImage {
+    width: 24px;
+    height: 24px;
+}
+
+.controlImageTouch {
+    width: 24px;
+    height: 24px;
+}
+
+.closeMenu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.infoText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.infoText span {
+    position: unset;
+    text-align: start;
+    font-size: 25px;
+}
+
+#info {
+    height: auto;
+    width: auto;
+    display: block;
+    background-image: radial-gradient(yellow, rgb(255, 230, 0), orange);
+    padding: 16px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 8px 0px black;
+    transition: all .4s ease-in-out;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    z-index: 100;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FF8E00;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 2px;
+    background-color: #AA401A;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #0075d5;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #0075d5;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+}
+
+.slider.round {
+    border-radius: 30px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
